@@ -67,6 +67,7 @@ class Tasks extends Memory_Model {
         $this->rest->option(CURLOPT_PORT, REST_PORT);
         return $this->rest->get('job/' . $key);
     }
+    
     // Delete a record from the database
     function delete($key, $key2 = null)
     {
@@ -75,6 +76,7 @@ class Tasks extends Memory_Model {
         $this->rest->delete('job/' . $key);
         $this->load(); // because the "database" might have changed
     }
+
     // Update the data in the database
     function update($record)
     {
@@ -85,6 +87,7 @@ class Tasks extends Memory_Model {
         $retrieved = $this->rest->put('job/' . $key, $record);
         $this->load();
     }
+
     // Add data in the database
     function add($record)
     {
